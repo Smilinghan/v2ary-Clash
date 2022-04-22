@@ -57,51 +57,6 @@ Debian：https://tracker.debian.org/pkg/golang-v2ray-core
 
 Arch Linux：https://tracker.debian.org/pkg/golang-v2ray-core
 
-
-#APT pinning
-
-目前，Debian 的 V2Ray 包仍位于 Unstable 仓库，想用新包，又不想整体转为 Unstable 的话，就可以使用 APT pinning (opens new window)。
-
-向 /etc/apt/preferences 写入：
-
-Explanation: Uninstall or do not install any Debian-originated
-
-Explanation: package versions other than those in the stable distro
-
-Package: *
-
-Pin: release a=stable
-
-Pin-Priority: 900
-
-Package: *
-
-Pin: release o=Debian
-
-Pin-Priority: -10
-
-这将保证主体仍为 Stable。
-
-向 /etc/apt/preferences.d/90debian-unstable 写入：
-
-Package: v2ray
-
-Pin: release a=unstable
-
-Pin-Priority: 900
-
-这会确保单独从 Unstable 仓库拿取 V2Ray 包。
-
-执行并写入：
-
-# apt edit-sources unstable
-
-deb https://deb.debian.org/debian/ sid main
-
-deb-src https://deb.debian.org/debian/ sid main
-
-这样就增添了 Unstable（Sid）仓库。
-
 #更新软体仓库并安装 V2Ray：
 
 apt update
@@ -110,23 +65,21 @@ apt install v2ray
 
 注意：由于该包在 v2ray.service 中使用了 DynamicUser=true，如果你想向 /var/log/v2ray/ 目录档中写入 Log，请执行并写入：
 
-# systemctl edit v2ray.service
-
-[Service]
-
-LogsDirectory=v2ray
-
 #Linuxbrew 包管理器
+
 
 Linuxbrew (opens new window)包管理器的使用方式与 Homebrew 一致：brew install v2ray
 
 #Docker 安装方式
 
+
 V2Ray 为 Linux 平台提供了预编译的 Docker image：v2fly/v2fly-core(opens new window)
 
 GitHub 仓库：github.com/v2fly/docker(opens new window)
 
-Docker image 的文件结构：
+
+#Docker image 的文件结构：
+
 
 /etc/v2ray/config.json：配置文件
 
