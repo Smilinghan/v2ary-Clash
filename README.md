@@ -1,6 +1,6 @@
-下载安装
+#下载安装
 
-V2Ray 在以下平台中可用：
+#V2Ray 在以下平台中可用：
 
 Windows 7 及之后版本（x86 / amd64 / arm32）；
 
@@ -22,7 +22,7 @@ Dragonfly BSD (amd64)；
 
 #验证安装包
 
-V2Ray 提供两种验证方式：
+#V2Ray 提供两种验证方式：
 
 ZIP 压缩包的 SHA1 / SHA256 摘要，在每个安装包对应的 .dgst 文件中可以找到。使用方式：v2ray verify --sig=Release /path/to/your/downloaded/v2ray/zip/file
 
@@ -47,15 +47,15 @@ ZIP 压缩包的 SHA1 / SHA256 摘要，在每个安装包对应的 .dgst 文件
 
 #安装脚本
 
-请查看 GitHub 仓库：fhs-install-v2ray(opens new window)
+请查看 GitHub 仓库：https://github.com/v2fly/fhs-install-v2ray
 
 #Linux 发行版包管理器
 
 Linux 发行版提供的 V2Ray 包（可通过发行版相应的包管理器安装）：
 
-Debian：golang-v2ray-core(opens new window)
+Debian：https://tracker.debian.org/pkg/golang-v2ray-core
 
-Arch Linux：community/x86_64/v2ray(opens new window)
+Arch Linux：https://tracker.debian.org/pkg/golang-v2ray-core
 
 
 #APT pinning
@@ -102,11 +102,11 @@ deb-src https://deb.debian.org/debian/ sid main
 
 这样就增添了 Unstable（Sid）仓库。
 
-更新软体仓库并安装 V2Ray：
+#更新软体仓库并安装 V2Ray：
 
-# apt update
+apt update
 
-# apt install v2ray
+apt install v2ray
 
 注意：由于该包在 v2ray.service 中使用了 DynamicUser=true，如果你想向 /var/log/v2ray/ 目录档中写入 Log，请执行并写入：
 
